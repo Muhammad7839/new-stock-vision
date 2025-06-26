@@ -10,7 +10,7 @@ for filename in os.listdir(input_folder):
     if filename.endswith('.csv') and '2018' not in filename:
         file_path = os.path.join(input_folder, filename)
         df = pd.read_csv(file_path, header=0)
-        year = filename.split('_')[0]
+        year = filename.split('_')[1]
         df['Year'] = year
         train_df = pd.concat([train_df, df], ignore_index=True)
 
