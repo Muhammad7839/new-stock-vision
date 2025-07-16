@@ -1,0 +1,161 @@
+<!-- Stock Vision Project Notes
+	1.	Main Project Folder
+/Users/muhammad/Development/Stock-Vision
+	2.	Backend Folder
+/Users/muhammad/Development/Stock-Vision/backend
+	3.	Cleaned Data Location
+/Users/muhammad/Development/Stock-Vision/archive/cleaned_financial_data
+	4.	Final Output Files
+	•	Training: /Users/muhammad/Development/Stock-Vision/archive/financial_data/final_training_data.csv
+	•	Testing: /Users/muhammad/Development/Stock-Vision/archive/financial_data/final_testing_data.csv
+	5.	Python Script to Generate Final Files
+Path: backend/finalize_data.py
+	6.	Notebook for EDA
+Path: backend/EDA.ipynb
+	7.	How to Run the Finalization Script
+
+cd backend
+python finalize_data.py
+
+
+	8.	Common Errors and Fixes
+	•	If “No such file or directory”: check that the archive and financial_data folders exist.
+	•	If the training file has 0 rows: check if dropna() is removing all data. Consider removing or adjusting it.
+	9.	Loading Data in Jupyter Notebook
+
+import pandas as pd
+train_df = pd.read_csv('../archive/financial_data/final_training_data.csv')
+test_df = pd.read_csv('../archive/financial_data/final_testing_data.csv')
+
+
+	10.	What Was Fixed
+
+	•	Dropped dropna() from finalize_data.py to keep rows with missing values.
+	•	Made sure the correct relative paths are used.
+	•	Confirmed training data now has 17685 rows.
+
+	Perfect ✅ Your project structure is now clean, organized, and ready for the next steps. Here’s a breakdown of what’s important and what to keep in mind going forward:
+
+⸻
+
+✅ Important Folders and Their Purpose
+
+Folder/Path	Purpose
+archive/cleaned_financial_data/	Individual cleaned CSV files per year (used as input for final dataset)
+archive/financial_data/	Final training and testing datasets (final_training_data.csv, etc.)
+backend/	All backend logic including data prep, EDA, ML models, and scripts
+backend/EDA.ipynb	Main notebook for EDA and model analysis
+backend/finalize_data.py	Combines yearly cleaned data into training/testing sets
+backend/clean_data.py	Used to clean raw yearly data
+backend/model/	Python files for price & sentiment prediction models
+frontend/	Simple UI (index.html, script.js, style.css)
+README.md	Project overview
+personal notes/	Your saved instructions or notes
+
+
+⸻
+
+🧾 Important Files to Remember
+
+File Path	Use / Info
+archive/financial_data/final_training_data.csv	Final training data — used for ML model training
+archive/financial_data/final_testing_data.csv	Final testing data — used for evaluating model performance
+backend/EDA.ipynb	Use this for all EDA, data loading, charts, insights, and analysis
+backend/finalize_data.py	Rerun this to regenerate training/testing data if source changes
+backend/requirements.txt	Use this to set up your Python environment with pip install -r
+y_pred.npy, y_test.npy	Prediction output files for evaluation or plotting
+
+
+⸻
+
+🗂️ Where to Store Notes So You Don’t Forget
+
+I suggest creating a simple reference file to store all of this. Name it:
+
+📄 personal notes/Project_Reference.txt
+
+Here’s a clean starter you can paste into that file:
+
+Project: Stock-Vision
+Last Updated: June 26, 2025
+
+Working Directory:
+- /Users/muhammad/Development/Stock-Vision/
+
+Key Paths:
+- Cleaned yearly files: archive/cleaned_financial_data/
+- Final datasets: archive/financial_data/final_training_data.csv
+- Main notebook: backend/EDA.ipynb
+- Data finalization script: backend/finalize_data.py
+- Model scripts: backend/model/
+- Frontend files: frontend/
+
+Virtual Environment:
+- backend/venv/
+
+To regenerate training/testing data:
+$ python backend/finalize_data.py
+
+To start EDA:
+Open backend/EDA.ipynb and run:
+  import pandas as pd
+  df = pd.read_csv('archive/financial_data/final_training_data.csv')
+
+Always use relative paths from the root (Stock-Vision/) or from backend/ if inside the notebook.
+
+Notes:
+- Avoid using backend/archive — it’s just a duplicate folder now.
+- Archive.zip was deleted.
+
+
+Project: Stock-Vision
+Last Updated: June 26, 2025
+
+Working Directory:
+	•	/Users/muhammad/Development/Stock-Vision/
+
+Key Paths:
+	•	Cleaned yearly files: archive/cleaned_financial_data/
+	•	Final datasets: archive/financial_data/final_training_data.csv
+	•	Final test set: archive/financial_data/final_testing_data.csv
+	•	Main notebook for EDA: backend/EDA.ipynb
+	•	Script to generate final datasets: backend/finalize_data.py
+	•	Data cleaning script: backend/clean_data.py
+	•	ML Model scripts: backend/model/
+	•	Frontend files: frontend/
+	•	Notes: personal notes/
+
+Virtual Environment:
+	•	backend/venv/
+
+How to Regenerate Final Training/Testing Data:
+	1.	Navigate to project root:
+cd /Users/muhammad/Development/Stock-Vision/
+	2.	Run the data finalization script:
+python backend/finalize_data.py
+
+Notebook Data Loading:
+Use this inside backend/EDA.ipynb:
+
+import pandas as pd
+train_df = pd.read_csv('archive/financial_data/final_training_data.csv')
+test_df = pd.read_csv('archive/financial_data/final_testing_data.csv')
+
+Important Reminders:
+	•	Always confirm the notebook is running in the correct working directory (backend/)
+	•	Only use archive/financial_data/ for finalized CSVs
+	•	Avoid using backend/archive — it was a duplicate
+	•	archive.zip was deleted after extraction
+	•	All extra or old copies of training/testing CSVs were removed
+	•	Use relative paths in notebook and script references
+
+Good Practices:
+	•	If cleaned yearly files are updated, re-run finalize_data.py
+	•	Avoid using dropna() directly unless you’re sure
+	•	Keep track of rows/columns in all transformations
+
+train_df = pd.read_csv('../archive/financial_data/final_training_data.csv')
+test_df = pd.read_csv('../archive/financial_data/final_testing_data.csv')
+
+
+	•	 -->
