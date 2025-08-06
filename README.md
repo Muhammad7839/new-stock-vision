@@ -1,4 +1,4 @@
-<img src="New_Stock_Vision/notebooks/images/logo.png" alt="logo" width="160"/>
+<img src="New_Stock_Vision/notebooks/images/logo.png" alt="logo" width="180"/>
 
 # StockVision: Forecasting Retail Stock Prices with Prophet and ARIMA
 
@@ -29,7 +29,7 @@ We trained Prophet separately on AMZN and COST, made 365-day forecasts, visualiz
 
 Here is a Prophet forecast screenshot:
 
-![Prophet Forecast](New_Stock_Vision/notebooks/images/prophet_amzn_forecast.png)
+![Prophet Forecast](New_Stock_Vision/notebooks/images/prophet_cost_forecast.png)
 
 ### 3. ARIMA Forecasting
 
@@ -37,7 +37,7 @@ We used ADF tests to check stationarity, differenced the data, and estimated par
 
 Here is an ARIMA forecast screenshot:
 
-![ARIMA Forecast](New_Stock_Vision/notebooks/images/prophet_cost_forecast.png)
+![ARIMA Forecast](New_Stock_Vision/notebooks/images/arima_amzn_forecast.png)
 
 ### 4. Model Comparison
 
@@ -64,14 +64,14 @@ ARIMA performed better than Prophet for both tickers based on error values. Prop
 
 ## Lessons Learned
 
-ARIMA is best for short-term retail stock prediction,
-Prophet gives great visuals and trend analysis but needs constraints for longer forecasts,
+ARIMA is best for short-term retail stock prediction,  
+Prophet gives great visuals and trend analysis but needs constraints for longer forecasts,  
 Visualizing everything helped catch overfitting and patterns.
 
 ## Future Work
 
-Add extra features like inflation or earnings,
-Try hybrid models using ARIMA and machine learning,
+Add extra features like inflation or earnings,  
+Try hybrid models using ARIMA and machine learning,  
 Deploy the model on Streamlit for public use.
 
 ## Authors
