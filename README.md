@@ -37,7 +37,7 @@ We used ADF tests to check stationarity, differenced the data, and estimated par
 
 Here is an ARIMA forecast screenshot:
 
-![ARIMA Forecast](New_Stock_Vision/notebooks/images/arimaforecast.png)
+![ARIMA Forecast](New_Stock_Vision/notebooks/images/arima.png)
 
 ### 4. Model Comparison
 
