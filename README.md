@@ -1,69 +1,82 @@
-# ![StockVision Logo](New_Stock_Vision/notebooks/images/logo.png)
+<p align="center">
+  <img src="New_Stock_Vision/notebooks/images/logo.png" alt="StockVision Logo" width="200"/>
+</p>
 
 # StockVision: Forecasting Retail Stock Prices with Prophet and ARIMA
 
-**StockVision** is a time series forecasting project that predicts future stock prices for two major retail companies: **Amazon (AMZN)** and **Costco (COST)**. We compare two forecasting models — **Facebook Prophet** and **ARIMA** — using visualizations, evaluation metrics, and real stock data from 2022 to 2025.
+**StockVision** is a stock price forecasting project using time series models to predict the future prices of two retail giants — **Amazon (AMZN)** and **Costco (COST)**. It compares two beginner-friendly models — **Facebook Prophet** and **ARIMA** — on real stock data from 2022 to 2025, using graphs and error metrics.
 
 ---
 
-## Project Goal
+## 📊 Project Goal
 
-Predict short-term stock price movements and compare the performance of two beginner-friendly models:
-- **Facebook Prophet** – captures trends and seasonality automatically
-- **ARIMA** – a statistical model good at handling patterns in historical data
+Forecast daily stock prices and compare which model is more reliable and accurate for short-term retail predictions.
 
 ---
 
-## Dataset
+## 📁 Dataset Info
 
 - **Source**: World-Stock-Prices-Dataset.csv
-- **Tickers Used**: AMZN (Amazon), COST (Costco)
-- **Date Range**: January 2022 to June 2025
-- **Target**: Daily closing stock prices
+- **Companies**: AMZN (Amazon), COST (Costco)
+- **Date Range**: January 2022 – June 2025
+- **Target Column**: Daily Closing Price
 
 ---
 
-## Steps and Structure
+## 🔧 Project Structure
 
-### 1. Data Preprocessing
-- Selected AMZN and COST data
-- Cleaned and formatted datasets for both models
-- Renamed columns to fit Prophet’s format (`ds`, `y`)
+### 1. Facebook Prophet Forecasting
 
-### 2. Facebook Prophet Modeling
-- Trained separate Prophet models for AMZN and COST
-- Forecasted 365 days into the future
-- Plotted:
-  - Full forecast
-  - Trend and seasonal components
-  - Zoomed actual vs predicted
-  - Moving averages (30-day, 90-day)
+- Preprocessed data for Prophet (`ds`, `y` columns)
+- Trained Prophet models for AMZN and COST
+- Forecasted 365 days ahead
+- Visualized:
+  - Full forecast plot
+  - Zoomed-in view
+  - Trend and seasonality
+  - 30-day and 90-day moving averages
+- Evaluated predictions using MAE and RMSE
 
-![AMZN Prophet Forecast](New_Stock_Vision/notebooks/images/prophet_amzn_forecast.png)
+#### 📷 Prophet Forecast Sample (AMZN)
 
-![COST Prophet Forecast](New_Stock_Vision/notebooks/images/prophet_cost_forecast.png)
-
-### 3. ARIMA Modeling
-- Ran Augmented Dickey-Fuller (ADF) tests for stationarity
-- Differenced data as needed
-- Used ACF/PACF plots to estimate ARIMA parameters
-- Trained ARIMA models separately for each ticker
-- Forecasted 30 days
-- Checked residuals with histogram and QQ plots
-
-### 4. Model Comparison
-- Pulled latest forecast arrays from both models
-- Plotted actual vs forecast for last 5 days
-
-![ARIMA vs Prophet Comparison](New_Stock_Vision/notebooks/images/comparison_arima_vs_prophet.png)
-
-- Plotted MAE and RMSE comparison bar charts
-
-![MAE RMSE Comparison](New_Stock_Vision/notebooks/images/mae_rmse_barplot.png)
+<img src="New_Stock_Vision/notebooks/images/prophet_amzn_forecast.png" alt="Prophet AMZN Forecast" width="700"/>
 
 ---
 
-## Evaluation Metrics
+### 2. ARIMA Forecasting
+
+- Checked stationarity with ADF Test
+- Used differencing for stable signals
+- Found p, d, q using ACF and PACF
+- Trained ARIMA models separately for each stock
+- Forecasted 30 days ahead
+- Visualized:
+  - Forecast vs Actual
+  - Residual analysis (Q-Q Plot, Histogram)
+- Evaluated using MAE and RMSE
+
+#### 📷 ARIMA Forecast Sample (COST)
+
+<img src="New_Stock_Vision/notebooks/images/prophet_cost_forecast.png" alt="Prophet COST Forecast" width="700"/>
+
+---
+
+### 3. Model Comparison
+
+- Extracted final 5-day predictions from both models
+- Calculated and plotted:
+  - MAE comparison
+  - RMSE comparison
+  - Daily forecast errors
+- Wrote conclusion on which model did better
+
+#### 📷 Model Comparison Chart
+
+<img src="New_Stock_Vision/notebooks/images/comparison_arima_vs_prophet.png" alt="Model Comparison" width="700"/>
+
+---
+
+## 📈 Evaluation Metrics
 
 | Ticker | Model   | MAE   | RMSE  |
 |--------|---------|-------|--------|
@@ -74,32 +87,33 @@ Predict short-term stock price movements and compare the performance of two begi
 
 ---
 
-## Conclusion
+## ✅ Conclusion
 
-- **ARIMA performed better than Prophet** in short-term forecasting for both tickers.
-- Prophet overshot future prices, especially on longer horizons.
-- ARIMA was more stable and followed real stock movements more closely.
-- Model separation, visualizations, and metrics followed mentor guidelines.
-
----
-
-## Lessons Learned
-
-- Visualizing forecasts helps catch large errors quickly
-- ARIMA requires more setup but gives better short-range performance
-- Prophet is user-friendly but needs tuning for real-world accuracy
+- **ARIMA** outperformed **Prophet** on both AMZN and COST.
+- Prophet overestimated due to long forecast range and no growth cap.
+- ARIMA stayed closer to the real prices and was better for short-term prediction.
 
 ---
 
-## Future Work
+## 🧠 Lessons Learned
 
-- Add features like market news, earnings reports, and inflation
-- Explore hybrid models combining ARIMA + ML models (e.g., XGBoost)
-- Deploy with Streamlit for interactive exploration
+- Prophet is great for quick trends and visualizations but needs tuning.
+- ARIMA is more precise for shorter windows.
+- Visual analysis and metrics helped us evaluate model reliability.
 
 ---
 
-## Team
+## 🔍 Future Improvements
 
-Muhammad A. , Dieunie G. , Pallavi V.  
-AI4ALL Ignite Program – Summer 2025
+- Add inflation or earnings as extra variables
+- Try hybrid models like ARIMA + ML (XGBoost)
+- Make an interactive dashboard using Streamlit
+
+---
+
+## 👨‍💻 Team
+
+Muhammad A., Dieunie G., Pallavi V.  
+**AI4ALL Ignite Program – Summer 2025**
+
+---
