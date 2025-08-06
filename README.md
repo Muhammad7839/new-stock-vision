@@ -39,11 +39,15 @@ We trained Facebook Prophet separately for Amazon and Costco. We forecasted 365 
 
 ## ARIMA Forecasting
 
-For ARIMA, we first checked if the data was stationary, used ADF tests and differencing, then used ACF and PACF to choose (p, d, q) values. We forecasted 30 future days and checked the residuals.
-
 ### Example Forecast (Amazon)
 
 ![ARIMA Forecast](New_Stock_Vision/notebooks/images/prophet_arima_cost_forecast.png)
+
+
+![ARIMA Forecast](New_Stock_Vision/notebooks/images/arima.png)
+
+For ARIMA, we first checked if the data was stationary, used ADF tests and differencing, then used ACF and PACF to choose (p, d, q) values. We forecasted 30 future days and checked the residuals.
+
 
 ---
 
