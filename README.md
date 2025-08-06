@@ -43,7 +43,7 @@ For ARIMA, we first checked if the data was stationary, used ADF tests and diffe
 
 ### Example Forecast (Amazon)
 
-![ARIMA Forecast](New_Stock_Vision/notebooks/images/arima.png)
+![ARIMA Forecast](New_Stock_Vision/notebooks/images/prophet_arima_cost_forecast.png)
 
 ---
 
