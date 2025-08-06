@@ -1,89 +1,55 @@
+<img src="New_Stock_Vision/notebooks/images/logo.png" alt="logo" width="100"/>
+
 # StockVision: Forecasting Retail Stock Prices with Prophet and ARIMA
 
-![Project Logo](New_Stock_Vision/notebooks/images/logo.png)
-
-StockVision is a time series forecasting project that predicts future stock prices for two major retail companies, Amazon and Costco. The goal is to compare two models, Facebook Prophet and ARIMA, using real data from 2022 to 2025. This helps us see which model works better for short-term stock forecasting in retail.
+StockVision is a time series forecasting project that predicts future stock prices for two major retail companies, Amazon (AMZN) and Costco (COST). We compare two forecasting models, Facebook Prophet and ARIMA, using real stock data from 2022 to 2025.
 
 ## Project Goal
 
-We are trying to predict short-term stock price movements and compare two models:
-Facebook Prophet, which is easy to use and good at showing trends and patterns,
-and ARIMA, which is a classic statistical model that handles patterns and noise in time series data.
+Our goal is to predict short-term stock price movements and compare how two different forecasting models perform,
+- Facebook Prophet, which captures trends and seasonality
+- ARIMA, which is better for short-term patterns and noise
 
 ## Dataset
 
-Source used: World-Stock-Prices-Dataset.csv  
-Tickers used: AMZN for Amazon and COST for Costco  
+Source: World-Stock-Prices-Dataset.csv  
+Tickers used: AMZN and COST  
 Date range: January 2022 to June 2025  
-Target column: Daily closing stock prices
+Target: Daily closing stock prices
 
-## Steps and Structure
+## Project Steps
 
 ### 1. Data Preprocessing
 
-We filtered the data to include only AMZN and COST, removed extra columns, formatted it for Prophet using ds and y, and checked for any missing values.
+We filtered for AMZN and COST, removed unrelated columns, reformatted for Prophet using `ds` and `y`, and handled missing values.
 
----
+### 2. Prophet Forecasting
 
-### 2. Facebook Prophet Forecasting
+We trained Prophet separately on AMZN and COST, made 365-day forecasts, visualized trends and patterns, and calculated error metrics like MAE and RMSE.
 
-We trained a separate Prophet model for both Amazon and Costco.  
-Then we predicted 365 days into the future and visualized different parts of the forecast.
+Here is a Prophet forecast screenshot:
 
-- Full forecast for each ticker
-- Trend and seasonal breakdown
-- Zoomed-in actual vs predicted plots
-- Moving averages for 30-day and 90-day
-- MAE and RMSE calculated
-
-#### Prophet Forecast - Amazon
-
-![Prophet Amazon Forecast](New_Stock_Vision/notebooks/images/prophet_amzn_forecast.png)
-
-#### Prophet Forecast - Costco
-
-![Prophet Costco Forecast](New_Stock_Vision/notebooks/images/prophet_cost_forecast.png)
-
----
+![Prophet Forecast](New_Stock_Vision/notebooks/images/prophet_amzn_forecast.png)
 
 ### 3. ARIMA Forecasting
 
-We did ADF tests to check for stationarity, differenced the data if needed, used ACF and PACF plots to choose parameters, then trained ARIMA models for both tickers.  
-Forecasted 30 days ahead and plotted actual vs predicted results.
+We used ADF tests to check stationarity, differenced the data, and estimated parameters using ACF and PACF plots. Then we trained ARIMA for both tickers, forecasted the next 30 days, visualized predictions, and evaluated errors.
 
-- Trained separate ARIMA models for each ticker
-- Visualized predictions and residuals
-- Calculated MAE and RMSE
+Here is an ARIMA forecast screenshot:
 
-#### ARIMA Forecast - Amazon
-
-![ARIMA Amazon Forecast](New_Stock_Vision/notebooks/images/arima_forecast_amzn.png)
-
-#### ARIMA Forecast - Costco
-
-![ARIMA Costco Forecast](New_Stock_Vision/notebooks/images/arima_forecast_cost.png)
-
----
+![ARIMA Forecast](New_Stock_Vision/notebooks/images/prophet_cost_forecast.png)
 
 ### 4. Model Comparison
 
-In this part, we pulled final prediction arrays from both models, created visual comparisons, and used bar charts to compare errors like MAE and RMSE.
+We compared both models using visual graphs and simple error metrics. Prophet tends to overpredict long-term, ARIMA is better for short-term forecasts.
 
-- Compared Prophet vs ARIMA visually
-- Graphed forecast accuracy side-by-side
-- Summarized which model did better
+Here are the model comparison screenshots:
 
-#### Forecast Comparison - ARIMA vs Prophet
+![Error Bar Chart](New_Stock_Vision/notebooks/images/mae_rmse_barplot.png)
 
-![Model Comparison](New_Stock_Vision/notebooks/images/comparison_arima_vs_prophet.png)
+![Forecast Comparison](New_Stock_Vision/notebooks/images/comparison_arima_vs_prophet.png)
 
-#### MAE and RMSE Bar Plot
-
-![MAE RMSE Bar Plot](New_Stock_Vision/notebooks/images/mae_rmse_barplot.png)
-
----
-
-## Evaluation Metrics
+## Evaluation
 
 | Ticker | Model   | MAE   | RMSE  |
 |--------|---------|-------|--------|
@@ -92,34 +58,23 @@ In this part, we pulled final prediction arrays from both models, created visual
 | COST   | Prophet | 223.02| 236.57|
 | COST   | ARIMA   | 5.34  | 7.16  |
 
----
-
 ## Conclusion
 
-ARIMA performed better than Prophet on both Amazon and Costco.  
-Prophet predicted values that were too high, especially since it was forecasting further into the future.  
-ARIMA stayed closer to the actual prices and worked better for short-term predictions.  
-We trained and evaluated each model separately for each ticker to make sure our results were accurate and clear.
-
----
+ARIMA performed better than Prophet for both tickers based on error values. Prophet captured patterns but often overpredicted when no growth cap was set. ARIMA stayed close to actual values and is better for short-term forecasts in this project.
 
 ## Lessons Learned
 
-- ARIMA is great for short-term forecasting when you want more accurate numbers
-- Prophet is beginner friendly and gives a lot of helpful graphs but sometimes overpredicts
-- Always look at residual plots and prediction charts to see how good your model really is
+ARIMA is best for short-term retail stock prediction,
+Prophet gives great visuals and trend analysis but needs constraints for longer forecasts,
+Visualizing everything helped catch overfitting and patterns.
 
----
+## Future Work
 
-## Future Improvements
-
-- Add extra columns like inflation or earnings to Prophet
-- Try combining models like ARIMA and XGBoost
-- Make a Streamlit app for live model predictions
-
----
+Add extra features like inflation or earnings,
+Try hybrid models using ARIMA and machine learning,
+Deploy the model on Streamlit for public use.
 
 ## Authors
 
-Muhammad A., Dieunie G., Pallavi V.  
+Muhammad A, Dieunie G, Pallavi V  
 AI4ALL Ignite Program, Summer 2025
