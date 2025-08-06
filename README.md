@@ -1,4 +1,4 @@
-<img src="New_Stock_Vision/notebooks/images/logo.png" alt="logo" width="720"/>
+<img src="New_Stock_Vision/notebooks/images/logo.png" alt="logo" width="540"/>
 
 # StockVision: Forecasting Retail Stock Prices with Prophet and ARIMA
 
@@ -37,7 +37,7 @@ We used ADF tests to check stationarity, differenced the data, and estimated par
 
 Here is an ARIMA forecast screenshot:
 
-![ARIMA Forecast](New_Stock_Vision/notebooks/images/arima_amzn_forecast.png)
+![ARIMA Forecast](New_Stock_Vision/notebooks/images/arimaforecast.png)
 
 ### 4. Model Comparison
 
