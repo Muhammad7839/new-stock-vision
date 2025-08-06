@@ -1,4 +1,4 @@
-<img src="New_Stock_Vision/notebooks/images/logo.png" alt="logo" width="180"/>
+<img src="New_Stock_Vision/notebooks/images/logo.png" alt="logo" width="360"/>
 
 # StockVision: Forecasting Retail Stock Prices with Prophet and ARIMA
 
@@ -6,8 +6,8 @@ StockVision is a time series forecasting project that predicts future stock pric
 
 ## Project Goal
 
-Our goal is to predict short-term stock price movements and compare how two different forecasting models perform,
-Facebook Prophet, which captures trends and seasonality,
+Our goal is to predict short-term stock price movements and compare how two different forecasting models perform,  
+Facebook Prophet, which captures trends and seasonality,  
 ARIMA, which is better for short-term patterns and noise.
 
 ## Dataset
