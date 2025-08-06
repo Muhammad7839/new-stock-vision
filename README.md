@@ -1,4 +1,4 @@
-<img src="New_Stock_Vision/notebooks/images/logo.png" alt="logo" width="360"/>
+<img src="New_Stock_Vision/notebooks/images/logo.png" alt="logo" width="720"/>
 
 # StockVision: Forecasting Retail Stock Prices with Prophet and ARIMA
 
