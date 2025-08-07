@@ -101,5 +101,5 @@ We compared Prophet and ARIMA using error metrics and side-by-side plots. ARIMA 
 
 ## Team
 
-Muhammad A., Dieunie G., Pallavi V.  
+Muhammad I., Dieunie G., Pallavi P.  
 AI4ALL Ignite Program, Summer 2025
